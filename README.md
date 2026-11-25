@@ -16,9 +16,9 @@ A design system for a med-tech company, built to keep the interfaces of radiatio
 | **Role** | UX/UI Designer |
 | **Domain** | Medical technology, radiation devices |
 | **Deliverable** | Design system foundations, tokens, usage rules and governance |
-| **Tools** | Figma, [add: Storybook / Style Dictionary / GitHub Pages] |
+| **Tools** | Figma (), GitHub Pages |
 | **Timeline** | [add: dates or duration] |
-| **Team** | [add: who you worked with, e.g. engineers, clinicians, product] |
+| **Team** | Principle designer, Product Manager, engineers, clinicians |
 
 ## The problem
 
