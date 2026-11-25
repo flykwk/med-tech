@@ -28,7 +28,7 @@ In a clinical setting, inconsistency is more than a visual issue. Clinicians who
 
 ## My role
 
-I created the design system to provide:
+I worked with Principle Designer and developers to create the design system to provide:
 
 - **Consistency:** the same problem gets the same solution across every device
 - **Sustainability:** shared foundations that can be maintained and extended without redesigning each product
