@@ -15,7 +15,7 @@ Typography makes clinical information readable at a glance, shows what matters m
 ## Type scale
 
 | Style | Token | Size / Line height | Weight | Usage |
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | Display | `display-xl` | 48 / 56 | Bold | Single critical value, such as a dose or heart rate on a monitor |
 | Display | `display-lg` | 32 / 40 | Bold | Key vitals and KPI tiles |
 | Display | `display-md` | 24 / 32 | Semibold | Secondary readings |
