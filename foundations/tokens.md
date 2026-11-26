@@ -9,7 +9,7 @@ Design tokens store foundation decisions as named values so there is a single so
 | Tier | Pattern | Examples |
 |---|---|---|
 | Primitive | `[hue]-[mode]-[step]` | `red-light-500`, `red-dark-500`, `green-light-50` |
-| Semantic | `[category]-[property]-[variant]-[role]` | `color-feedback-error-surface`, `color-feedback-success-text` |
+| Semantic | `[category]-[property]-[variant]-[role]` | `color-feedback-error-surface`, `color-feedback-success-text`, `color-brand-primary-solid` |
 | Component | `[component]-[variant]-[property]` | `alert-error-bg` |
 
 - **Hue** is the palette name, for example `red`, `amber`, `green`.

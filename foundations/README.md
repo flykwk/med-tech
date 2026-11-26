@@ -8,7 +8,7 @@ The foundations are the lowest layer of the design system: small sets of named, 
 |---|---|
 | [Principles](./principles.md) | How design decisions are made and settled |
 | [Design tokens](./tokens.md) | Naming convention and the primitive, semantic and component tiers |
-| [Color](./color.md) | Palettes, feedback colors and contrast rules |
+| [Color](./color.md) | Brand colors, feedback colors and contrast rules |
 | [Typography](./typography.md) | Typefaces, type scale and text rules |
 | [Spacing and layout](./spacing-layout.md) | Spacing scale, grid, breakpoints and touch targets |
 | [Elevation and shape](./elevation-shape.md) | Shadow levels, radii and borders |
