@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Color in this system has two separate jobs. Brand colors (teal and vivid teal) carry identity and emphasis. Feedback colors (red, amber, green) carry clinical status and risk. Every palette has a light and a dark scale so interfaces stay legible in both themes.
+Color in this system has three separate jobs. Brand colors (teal and vivid teal) carry identity and emphasis. Feedback colors (red, amber, green) carry clinical status and risk. Neutral colors build the surfaces, text, borders and icons of the interface. Every palette has a light and a dark scale so interfaces stay legible in both themes.
 
 <!-- Add a screenshot of your palettes here. -->
 
@@ -88,11 +88,83 @@ WCAG 2.2 AA ratios for every pairing the brand semantic tokens create, calculate
 
 All pairings pass in both modes. Steps 300 to 600 are decorative and are not guaranteed to meet 3:1 or 4.5:1. `vivid-teal-light-500` is 3.02:1 on white, which meets 3:1 for graphics but not 4.5:1 for text.
 
-## Neutral palette
+## Neutral colors
 
-| Role | Token | Light value | Dark value | Usage |
+Neutral colors build the interface structure: surfaces, text, borders and icons. The scale is tinted from the base color `#151820`, which is the dark-mode canvas (`neutral-dark-50`) and the light-mode ink (`neutral-light-800`). Neutral colors carry no meaning of their own, so they never signal brand or status.
+
+### Neutral scale
+
+| Step | Light value | Dark value | Name | Level | Usage |
+|---|---|---|---|---|---|
+| 50 | <img src="./assets/swatches/F9FAFD.svg" width="14" height="14" alt="F9FAFD swatch"> `#F9FAFD` | <img src="./assets/swatches/151820.svg" width="14" height="14" alt="151820 swatch"> `#151820` | Neutral 50 | Surface tint | Lightest tint. In dark mode this is the base canvas (`#151820`) |
+| 100 | <img src="./assets/swatches/F0F2F7.svg" width="14" height="14" alt="F0F2F7 swatch"> `#F0F2F7` | <img src="./assets/swatches/1B1F29.svg" width="14" height="14" alt="1B1F29 swatch"> `#1B1F29` | Neutral 100 | Subtle surface | Subtle surface and hover tint |
+| 200 | <img src="./assets/swatches/E3E6EE.svg" width="14" height="14" alt="E3E6EE swatch"> `#E3E6EE` | <img src="./assets/swatches/2A2F3D.svg" width="14" height="14" alt="2A2F3D swatch"> `#2A2F3D` | Neutral 200 | Raised or inset surface | Tables, inset areas and hover surface |
+| 300 | <img src="./assets/swatches/D3D7E1.svg" width="14" height="14" alt="D3D7E1 swatch"> `#D3D7E1` | <img src="./assets/swatches/3B3F4C.svg" width="14" height="14" alt="3B3F4C swatch"> `#3B3F4C` | Neutral 300 | Subtle border | Decorative dividers and card outlines |
+| 400 | <img src="./assets/swatches/B9BEC8.svg" width="14" height="14" alt="B9BEC8 swatch"> `#B9BEC8` | <img src="./assets/swatches/555B69.svg" width="14" height="14" alt="555B69 swatch"> `#555B69` | Neutral 400 | Disabled | Text of inactive controls. Exempt from contrast minimums |
+| 500 | <img src="./assets/swatches/757A88.svg" width="14" height="14" alt="757A88 swatch"> `#757A88` | <img src="./assets/swatches/7A8090.svg" width="14" height="14" alt="7A8090 swatch"> `#7A8090` | Neutral 500 | Strong border | Borders of inputs and controls (3:1) |
+| 600 | <img src="./assets/swatches/5D6371.svg" width="14" height="14" alt="5D6371 swatch"> `#5D6371` | <img src="./assets/swatches/959BAB.svg" width="14" height="14" alt="959BAB swatch"> `#959BAB` | Neutral 600 | Icon and tertiary text | Icons (3:1) and tertiary text (4.5:1) |
+| 700 | <img src="./assets/swatches/484D5B.svg" width="14" height="14" alt="484D5B swatch"> `#484D5B` | <img src="./assets/swatches/B5BAC8.svg" width="14" height="14" alt="B5BAC8 swatch"> `#B5BAC8` | Neutral 700 | Secondary text | Captions and helper text (4.5:1) |
+| 800 | <img src="./assets/swatches/151820.svg" width="14" height="14" alt="151820 swatch"> `#151820` | <img src="./assets/swatches/DBDEE6.svg" width="14" height="14" alt="DBDEE6 swatch"> `#DBDEE6` | Neutral 800 | Primary text | Base ink in light mode (`#151820`). Body and heading text (4.5:1) |
+| 900 | <img src="./assets/swatches/090B10.svg" width="14" height="14" alt="090B10 swatch"> `#090B10` | <img src="./assets/swatches/EFF2F7.svg" width="14" height="14" alt="EFF2F7 swatch"> `#EFF2F7` | Neutral 900 | Highest emphasis | Rare, highest-emphasis text |
+
+Token names: `neutral-light-50` to `neutral-light-900`, `neutral-dark-50` to `neutral-dark-900`. In dark mode, steps 50 to 200 are the three surface levels `#151820`, `#1B1F29` and `#2A2F3D`.
+
+### White and black
+
+Two absolute colors sit beside the neutral scale. They are the same in light and dark mode, so their names carry no mode. The two black-alpha values hold the opacity for the scrim.
+
+| Token | Value | Usage |
+|---|---|---|
+| `white` | <img src="./assets/swatches/FFFFFF.svg" width="14" height="14" alt="FFFFFF swatch"> `#FFFFFF` | Text and icons on dark fills, for example on `teal-light-700` (6.47:1). Not for large surfaces |
+| `black` | <img src="./assets/swatches/000000.svg" width="14" height="14" alt="000000 swatch"> `#000000` | Scrims, overlays and shadows. Not for large surfaces |
+| `black-alpha-50` | `rgba(0, 0, 0, 0.5)` | Black at 50% opacity. Scrim in light mode |
+| `black-alpha-65` | `rgba(0, 0, 0, 0.65)` | Black at 65% opacity. Scrim in dark mode |
+
+White on black is 21:1. Use the neutral scale for surfaces and text instead: pure white glares and pure black loses depth next to the dark surfaces, so the scale stops short of both. Components do not use `white` or `black` directly. `white` backs `color-neutral-text-inverse` and `black-alpha-50` and `black-alpha-65` back `color-neutral-scrim`; add a semantic token that aliases them when another role needs one.
+
+### UI hierarchy
+
+Interfaces nest three surface levels. Each level sits on the one before it: a card on the canvas, a table on the card.
+
+| Level | Used for | Token | Light mode | Dark mode |
 |---|---|---|---|---|
-| Neutral scale | `neutral-[light/dark]-[50-900]` | [#] | [#] | [Text, borders, surfaces] |
+| Primary | Canvas: the app background | `color-neutral-surface-primary` | `{neutral-light-100}` | `{neutral-dark-50}` |
+| Secondary | Card: panels placed on the canvas | `color-neutral-surface-secondary` | `{neutral-light-50}` | `{neutral-dark-100}` |
+| Tertiary | Table: inset areas placed on a card | `color-neutral-surface-tertiary` | `{neutral-light-200}` | `{neutral-dark-200}` |
+
+Neutral surfaces are the one exception to the rule that a semantic token maps to the same step in both modes. In dark mode a nested surface gets lighter, and in light mode a card is lighter than the canvas it sits on, so the light surface tokens use different steps. All other neutral tokens use the same step in both modes.
+
+### Neutral semantic mapping
+
+| Semantic token | Light mode | Dark mode | Usage |
+|---|---|---|---|
+| `color-neutral-surface-primary` | `{neutral-light-100}` | `{neutral-dark-50}` | Canvas, the lowest level of the hierarchy |
+| `color-neutral-surface-secondary` | `{neutral-light-50}` | `{neutral-dark-100}` | Cards and panels on the canvas |
+| `color-neutral-surface-tertiary` | `{neutral-light-200}` | `{neutral-dark-200}` | Tables and inset areas on a card |
+| `color-neutral-border-subtle` | `{neutral-light-300}` | `{neutral-dark-300}` | Decorative divider or card outline. Not for a control that relies on its border alone |
+| `color-neutral-border-strong` | `{neutral-light-500}` | `{neutral-dark-500}` | Border of an input or control (3:1 or more against every surface) |
+| `color-neutral-text-primary` | `{neutral-light-800}` | `{neutral-dark-800}` | Primary text on every surface |
+| `color-neutral-text-secondary` | `{neutral-light-700}` | `{neutral-dark-700}` | Captions and helper text on every surface |
+| `color-neutral-text-tertiary` | `{neutral-light-600}` | `{neutral-dark-600}` | Placeholders, timestamps and hint text on every surface (4.5:1 or more) |
+| `color-neutral-text-disabled` | `{neutral-light-400}` | `{neutral-dark-400}` | Text of an inactive control. Never for readable content |
+| `color-neutral-icon-default` | `{neutral-light-600}` | `{neutral-dark-600}` | Icons and graphics that carry meaning |
+| `color-neutral-surface-inverse` | `{neutral-light-800}` | `{neutral-dark-800}` | Inverse surface for tooltips and toasts: dark in light mode, light in dark mode |
+| `color-neutral-text-inverse` | `{white}` | `{neutral-dark-50}` | Text and icons on the inverse surface |
+| `color-neutral-scrim` | `{black-alpha-50}` | `{black-alpha-65}` | Scrim behind modals and drawers. The opacity is part of the variable, so apply it at 100% layer opacity. Stronger in dark mode, where a lighter dim is barely visible on a dark page |
+
+### Neutral contrast check
+
+WCAG 2.2 AA ratios for each foreground on all three surface levels, calculated from the hex values above. Text needs 4.5:1. Meaningful icons and control borders need 3:1.
+
+| Foreground | Requirement | Primary surface light | Secondary surface light | Tertiary surface light | Primary surface dark | Secondary surface dark | Tertiary surface dark |
+|---|---|---|---|---|---|---|---|
+| Text primary (800) | 4.5:1 | 15.84 | 17.00 | 14.21 | 13.19 | 12.24 | 9.92 |
+| Text secondary (700) | 4.5:1 | 7.54 | 8.09 | 6.76 | 9.15 | 8.49 | 6.88 |
+| Text tertiary (600) | 4.5:1 | 5.37 | 5.77 | 4.82 | 6.38 | 5.93 | 4.80 |
+| Icon (600) | 3:1 | 5.37 | 5.77 | 4.82 | 6.38 | 5.93 | 4.80 |
+| Border strong (500) | 3:1 | 3.83 | 4.11 | 3.44 | 4.49 | 4.17 | 3.38 |
+
+All pairings pass in both modes. The inverse pairing, `color-neutral-text-inverse` on `color-neutral-surface-inverse`, is 17.75:1 in light mode and 13.19:1 in dark mode. `color-neutral-border-subtle` is decorative and `color-neutral-text-disabled` belongs to inactive controls, so neither has a contrast requirement. Pairings of neutral text with brand or feedback surfaces are not covered by this table.
 
 ## Feedback colors
 
@@ -191,11 +263,40 @@ Dark values of the feedback palettes are generated in OKLCH so every family foll
 
 These values are calibrated for WCAG contrast and perceptual consistency on screen. They are not calibrated for a specific clinical display or a measured room lighting condition. Check them on the target device before release. Because the families share lightness, red and green are hard to tell apart for people with red-green color blindness, so status must always carry an icon or label as well as color.
 
+## Component colors
+
+Component tokens are the third tier (see [tokens](./tokens.md)). Each one is scoped to a single component and aliases a semantic token, so it follows the light or dark theme without a mode of its own. In Figma they live in the `Component` collection.
+
+| Component token | References | Usage |
+|---|---|---|
+| `tooltip-bg` | `{color-neutral-surface-inverse}` | Tooltip background |
+| `tooltip-text` | `{color-neutral-text-inverse}` | Tooltip text and icons |
+| `toast-bg` | `{color-neutral-surface-inverse}` | Default (neutral) toast background |
+| `toast-text` | `{color-neutral-text-inverse}` | Default toast text, icon and action |
+| `toast-error-bg` | `{color-feedback-error-solid}` | Error toast background |
+| `toast-error-text` | `{color-feedback-error-on-solid}` | Error toast text, icon and action |
+| `toast-warning-bg` | `{color-feedback-warning-solid}` | Warning toast background |
+| `toast-warning-text` | `{color-feedback-warning-on-solid}` | Warning toast text, icon and action |
+| `toast-success-bg` | `{color-feedback-success-solid}` | Success toast background |
+| `toast-success-text` | `{color-feedback-success-on-solid}` | Success toast text, icon and action |
+
+A tooltip and the default toast use the inverse surface: dark in light mode and light in dark mode. Status toasts use the feedback solid with its on-solid text.
+
+| Pairing | Requirement | Light mode | Dark mode |
+|---|---|---|---|
+| `tooltip-text` on `tooltip-bg`, and `toast-text` on `toast-bg` | 4.5:1 | 17.75 | 13.19 |
+| `toast-error-text` on `toast-error-bg` | 4.5:1 | 8.07 | 10.23 |
+| `toast-warning-text` on `toast-warning-bg` | 4.5:1 | 4.92 | 10.52 |
+| `toast-success-text` on `toast-success-bg` | 4.5:1 | 4.79 | 10.94 |
+
+All pairings pass in both modes. They reuse the verified on-solid and inverse pairings, so the ratios match the feedback and neutral contrast checks. A status toast must still carry an icon or label, never color alone.
+
 ## Rules
 
 - Text contrast: minimum 4.5:1 for body text and 3:1 for large text and meaningful UI components (WCAG 2.2 AA), checked separately in light and dark mode.
 - Use `-text` for text and `-solid` for meaningful icons and indicators. Do not use steps 300 to 600 for either.
 - Never use color as the only way to convey meaning; pair it with an icon, label or pattern.
+- Nest surfaces in order: primary, then secondary, then tertiary. Do not skip a level or reverse the order.
 - Keep brand and feedback colors apart: brand colors never signal status, and feedback colors never serve as brand or decoration.
 - Maximum of [1] primary action color per view.
 - Use semantic tokens in components. They resolve to the light or dark primitive for the active theme.
