@@ -134,6 +134,23 @@ Interfaces nest three surface levels. Each level sits on the one before it: a ca
 
 Neutral surfaces are the one exception to the rule that a semantic token maps to the same step in both modes. In dark mode a nested surface gets lighter, and in light mode a card is lighter than the canvas it sits on, so the light surface tokens use different steps. All other neutral tokens use the same step in both modes.
 
+#### Surface hierarchy in use
+
+The Figma frame "Foundation / Color / Roles in use" shows the three levels nested in Light and Dark.
+
+| Level | Light hex | Dark hex |
+|---|---|---|
+| Primary (canvas) | `#F0F2F7` | `#151820` |
+| Secondary (card) | `#F9FAFD` | `#1B1F29` |
+| Tertiary (table) | `#E3E6EE` | `#2A2F3D` |
+
+Content tokens do not change with the level. Text, icon and strong-border tokens use one value on all three levels, so an element can move between levels without being re-colored.
+
+- Dark mode: each nested level is lighter than its parent.
+- Light mode: the card is lighter than the canvas, and the table is darker than the card.
+- Nest in order: primary, then secondary, then tertiary. Do not skip a level or reverse the order.
+- Text, icon and `color-neutral-border-strong` pass AA on every level in both modes (see the neutral contrast check). `color-neutral-border-subtle` is decorative and measures only 1.15 to 1.69:1 against the surfaces.
+
 ### Neutral semantic mapping
 
 | Semantic token | Light mode | Dark mode | Usage |
